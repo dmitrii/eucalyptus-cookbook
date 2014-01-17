@@ -115,8 +115,7 @@ if node["eucalyptus"]["install-type"] == "source"
 
   ### Checkout Eucalyptus Source
   execute "Checkout source" do
-    cwd node["eucalyptus"]["source-directory"]
-    command "git clone #{node['eucalyptus']['source-repo']} -b #{node['eucalyptus']['source-branch']}"
+    command "git clone #{node['eucalyptus']['source-repo']} -b #{node['eucalyptus']['source-branch']} #{node['eucalyptus']['source-directory']}"
   end
 
   execute "Init submodules" do
